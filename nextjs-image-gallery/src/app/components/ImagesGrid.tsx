@@ -5,19 +5,18 @@ import { Photo } from "./ProductCard"; // Ensure Photo is a type or interface wi
 
 interface ProductGridProps {
     products: Photo[];
+    addToCart: (newCartItem:Photo) => void;
 }
 
-export default function ImagesGrid({ products }: ProductGridProps) {
+export default function ImagesGrid({ products , addToCart}: ProductGridProps) {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.length > 0 ? (
                 products.map((product) => (
                     <ProductCard
-                        key = {product.id}
-                        id = {product.id}
-                        url = {product.url}
-                        photographer = {product.photographer}  
-                        src = {product.src} 
+                        key={product.id}
+                        photo = {product}
+                        addToCart={addToCart}
                     />
                 ))
             ) : (

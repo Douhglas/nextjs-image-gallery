@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
     }
 
     try {
-        const url = `https://api.pexels.com/v1/search?query=${query}&per_page=1`;
+        const url = `https://api.pexels.com/v1/search?query=${query}&per_page=6`;
         const response = await fetch(url, {
             headers: {
                 Authorization: PEXELS_API_KEY,
