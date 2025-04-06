@@ -1,16 +1,24 @@
-// filepath: c:\Users\Usuario\Desktop\nextjs-image-gallery\nextjs-image-gallery\src\app\components\ImagesGrid.tsx
+
 import ProductCard from "./ProductCard";
 
-interface Product {
+interface Photo {
     id: number;
-    name: string;
-    price: number;
-    image: string;
-    description: string;
+    url: string;
+    photographer: string;
+    src: {
+        original: string;
+        large2x: string;
+        large: string;
+        medium: string;
+        small: string;
+        portrait: string;
+        landscape: string;
+        tiny: string;
+    }; // Asegúrate de que "src" sea un objeto con estas propiedades
 }
 
 interface ProductGridProps {
-    products: Product[];
+    products: Photo[];
 }
 
 export default function ImagesGrid({ products }: ProductGridProps) {
@@ -19,11 +27,11 @@ export default function ImagesGrid({ products }: ProductGridProps) {
             {products.length > 0 ? (
                 products.map((product) => (
                     <ProductCard
-                        key={product.id}
-                        image={product.image}
-                        title={product.name}
-                        description={product.description}
-                        price={product.price}
+                        key = {product.id}
+                        id = {product.id}
+                        url = {product.url}
+                        photographer = {product.photographer}  
+                        src = {product.src} 
                     />
                 ))
             ) : (
