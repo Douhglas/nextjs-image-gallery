@@ -10,10 +10,10 @@ import CartDrawer from "./components/CartDrawer";
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [query, setQuery] = useState<string>("nature");
-    const [cartItems, setCartItems] = useState<Photo[]>([]); // Estado para manejar los productos en el carrito
-    const [isOpen, setIsOpen] = useState<boolean>(false); // Estado para manejar el carrito
-    const [loading, setLoading] = useState<boolean>(true); // Estado de carga
-    const [error, setError] = useState<string | null>(null); // Estado para manejar errores
+    const [cartItems, setCartItems] = useState<Photo[]>([]);
+    const [isOpen, setIsOpen] = useState<boolean>(false); 
+    const [loading, setLoading] = useState<boolean>(true); 
+    const [error, setError] = useState<string | null>(null); 
 
     const addToCart = (product:Photo) => {
         if(cartItems.some((item) => item.id === product.id)){
@@ -71,6 +71,7 @@ export default function Home() {
                     onClose={() => setIsOpen(false)}
                     cartItems={cartItems}
                     removeFromCart={(productId: number) => removeFromCart(productId)}
+                    variant="dropdown"
                 />
             </main>
         </>
