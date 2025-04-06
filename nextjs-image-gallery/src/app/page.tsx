@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="container mx-auto flex items-center justify-between">
                     <h1 className="text-2xl font-bold">Galería de Imágenes</h1>
                     <div className="flex items-center gap-4">
-                        <SearchBar />
+                        <SearchBar setQuery={setQuery} />
                         <button
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             onClick={() => setIsOpen(true)}
