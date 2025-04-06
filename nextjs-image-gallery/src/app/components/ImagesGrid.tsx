@@ -1,21 +1,7 @@
 
 import ProductCard from "./ProductCard";
+import { Photo } from "./ProductCard"; // Ensure Photo is a type or interface with the correct structure
 
-interface Photo {
-    id: number;
-    url: string;
-    photographer: string;
-    src: {
-        original: string;
-        large2x: string;
-        large: string;
-        medium: string;
-        small: string;
-        portrait: string;
-        landscape: string;
-        tiny: string;
-    }; // Asegúrate de que "src" sea un objeto con estas propiedades
-}
 
 interface ProductGridProps {
     products: Photo[];
